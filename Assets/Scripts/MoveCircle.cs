@@ -6,7 +6,7 @@ public class MoveCircle : MonoBehaviour, IDragHandler {
 	public float speed = 0.006f;
 	public bool isSelected = false;
 	public GameObject goldenObject;
-	public float goldenScaleSpeed = 0.01f;
+	float goldenScaleSpeed = 0.03f;
 	public float goldenRotateSpeed = 2;
 	public float goldenScaleLimit = 7.2f;
 	public float goldenPositionSpeed = 0.01f;
