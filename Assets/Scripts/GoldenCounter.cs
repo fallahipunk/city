@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
-public class GoldenCounter : MonoBehaviour {
+public class GoldenCounter : MonoBehaviour, IPointerClickHandler {
 	public float counter=0;
 	public GameObject nextPrefab;
 	public BoxCollider myBoxCollider;
@@ -18,11 +19,16 @@ public class GoldenCounter : MonoBehaviour {
 		}
 	}
 
-	void Selected(){
-		if (gameObject.transform.localScale.x >=scaleLimit){
-			Instantiate(nextPrefab, new Vector3(0,0,0) , Quaternion.identity);
-			Destroy(transform.parent.gameObject);
-		}
+	//void Selected(){
+	//	if (gameObject.transform.localScale.x >=scaleLimit){
+	//		Instantiate(nextPrefab, new Vector3(0,0,0) , Quaternion.identity);
+	//		Destroy(transform.parent.gameObject);
+	//	}
+	//}
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+		Instantiate(nextPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+		Destroy(transform.parent.gameObject);
 	}
-	
 }
