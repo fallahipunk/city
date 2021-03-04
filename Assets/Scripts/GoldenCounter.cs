@@ -28,6 +28,7 @@ public class GoldenCounter : MonoBehaviour, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData)
     {
+		Debug.Log(gameObject.transform.localScale.x + " == " + scaleLimit);
 		if (gameObject.transform.localScale.x >= scaleLimit)
 		{
 			Instantiate(nextPrefab, new Vector3(0, 0, 0), Quaternion.identity);
