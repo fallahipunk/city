@@ -28,10 +28,7 @@ public class GoldenCounter : MonoBehaviour, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData)
     {
-		if (transform.localScale.x >= 7.15)
-		{
-			Instantiate(nextPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-			Destroy(transform.parent.gameObject);
-		}
+		Instantiate(nextPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+		Destroy(transform.parent.gameObject);
 	}
 }
